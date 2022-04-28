@@ -2,24 +2,19 @@ package main
 
 import (
 	"fmt"
-	"go_play/helper"
+	"go_play/database"
 )
 
-type Person struct {
-	name string
-}
+// type Person struct {
+// 	name string
+// }
 
-func changeName(p *Person) {
-	(*p).name = "santoso"
-}
+// func changeName(p *Person) {
+// 	(*p).name = "santoso"
+// }
 
 func main() {
-	person := Person{
-		name: "budi",
-	}
+	dbName := database.GetDB()
 
-	changeName(&person)
-
-	fmt.Println(person)
-	helper.SayHello(person.name)
+	fmt.Println(dbName)
 }
